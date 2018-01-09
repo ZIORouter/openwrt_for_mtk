@@ -1,0 +1,17 @@
+Index: linux-3.10.14/net/nat/hw_nat/Makefile
+===================================================================
+--- linux-3.10.14.orig/net/nat/hw_nat/Makefile
++++ linux-3.10.14/net/nat/hw_nat/Makefile
+@@ -23,3 +23,12 @@ ifeq ($(CONFIG_RAETH_GMAC2),y)
+ 	EXTRA_CFLAGS += -DCONFIG_PSEUDO_SUPPORT
+ endif
+ 
++# ifeq ($(CONFIG_FIRST_IF_MT7615E),y)
++	EXTRA_CFLAGS += -DCONFIG_MBSS_SUPPORT -DCONFIG_RTDEV
++# endif
++
++# ifeq ($(CONFIG_SECOND_IF_MT7615E),y)
++	EXTRA_CFLAGS += -DCONFIG_MBSS_SUPPORT -DCONFIG_RTDEV
++# endif
++
++

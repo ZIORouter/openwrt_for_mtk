@@ -1,0 +1,18 @@
+Index: linux-3.10.14/net/nat/hw_nat/Kconfig
+===================================================================
+--- linux-3.10.14.orig/net/nat/hw_nat/Kconfig
++++ linux-3.10.14/net/nat/hw_nat/Kconfig
+@@ -370,11 +370,11 @@ config  PPE_MCAST
+ config  RA_HW_NAT_WIFI
+ 	bool "WiFi Acceleration"
+ 	depends on RA_HW_NAT 
+-	select RA_HW_NAT_WIFI_NEW_ARCH if CHIP_MT7615E
++	select RA_HW_NAT_WIFI_NEW_ARCH
+ 	
+ config  RA_HW_NAT_WIFI_NEW_ARCH
+ 	bool "WiFi Acceleration New Architecture"
+-	depends on RA_HW_NAT_WIFI && CHIP_MT7615E
++	depends on RA_HW_NAT_WIFI
+ 	
+ config  RA_HW_NAT_NIC_USB
+ 	bool "PCIe Ethernet NIC/USB Acceleration"

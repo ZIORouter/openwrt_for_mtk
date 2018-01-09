@@ -1,0 +1,21 @@
+Index: linux-3.10.14/net/nat/hw_nat/ra_nat.c
+===================================================================
+--- linux-3.10.14.orig/net/nat/hw_nat/ra_nat.c
++++ linux-3.10.14/net/nat/hw_nat/ra_nat.c
+@@ -3963,11 +3963,15 @@ static void SetAclFwd(uint32_t Ebl)
+ #else
+ 		WanInt = ra_dev_get_by_name("eth2.1");
+ #endif
++#if defined (CONFIG_RALINK_MT7621) || defined (CONFIG_ARCH_MT7623)
++		WanInt = ra_dev_get_by_name("eth1");
++#endif
++		LanInt = ra_dev_get_by_name("br-lan");
+ #else
+ 		WanInt = ra_dev_get_by_name("eth2.2");
+ #endif
+-#endif
+ 		LanInt = ra_dev_get_by_name("br0");
++#endif
+ 		for(i = 0;i< 6;i++){
+ 			value = RegRead(RALINK_ETH_SW_BASE + 0x2004 + (i * 0x100));
+ 			value |= (0x1 << 10);

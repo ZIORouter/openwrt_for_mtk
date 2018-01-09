@@ -1,0 +1,10 @@
+Index: linux-3.10.14/fs/Makefile
+===================================================================
+--- linux-3.10.14.orig/fs/Makefile
++++ linux-3.10.14/fs/Makefile
+@@ -129,4 +129,4 @@ obj-$(CONFIG_CEPH_FS)		+= ceph/
+ obj-$(CONFIG_PSTORE)		+= pstore/
+ obj-$(CONFIG_EFIVAR_FS)		+= efivarfs/
+ obj-$(CONFIG_AUFS_FS)           += aufs/
+-obj-$(CONFIG_UFSD_FS)           += ufsd/
++#obj-$(CONFIG_UFSD_FS)           += ufsd/
